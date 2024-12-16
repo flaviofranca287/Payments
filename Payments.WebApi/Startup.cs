@@ -38,15 +38,15 @@ namespace Payments.WebApi
             
             services.AddScoped<IClientsService, ClientService>();
             services.AddScoped<IClientsRepository, ClientsRepository>();
-            services.AddSingleton<IValidator<UpsertClientRequest>, UpsertClientRequestValidator>();
+            services.AddTransient<IValidator<UpsertClientRequest>, UpsertClientRequestValidator>();
             
             services.AddScoped<ICompanyService, CompanyService>();
             services.AddScoped<ICompaniesRepository, CompaniesRepository>();
-            services.AddSingleton<IValidator<UpsertCompanyRequest>, UpsertCompanyRequestValidator>();
+            services.AddTransient<IValidator<UpsertCompanyRequest>, UpsertCompanyRequestValidator>();
             
             services.AddScoped<IPaymentService, PaymentService>();
             services.AddScoped<IPaymentsRepository, PaymentsRepository>();
-            services.AddSingleton<IValidator<InsertPaymentRequest>, InsertPaymentRequestValidator>();
+            services.AddTransient<IValidator<InsertPaymentRequest>, InsertPaymentRequestValidator>();
             
             Dapper.SqlMapper.AddTypeHandler(new DateOnlyTypeHandler());
         }
