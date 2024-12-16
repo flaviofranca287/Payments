@@ -11,7 +11,7 @@ namespace Payments.WebApi.Controllers;
 [ApiController]
 public class ClientsController : ControllerBase
 {
-    [HttpPut("clients/register/{plate}")]
+    [HttpPut("clients/{plate}")]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<ActionResult> Upsert(
         [FromRoute] string plate,

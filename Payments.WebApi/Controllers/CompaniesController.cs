@@ -12,7 +12,7 @@ namespace Payments.WebApi.Controllers;
 [ApiController]
 public class CompaniesController : ControllerBase
 {
-    [HttpPut("companies/register/{documentNumber}")]
+    [HttpPut("companies/{documentNumber}")]
     [Produces(MediaTypeNames.Application.Json)]
     public async Task<ActionResult> Upsert(
         [FromRoute] string documentNumber,
